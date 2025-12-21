@@ -10,8 +10,6 @@ In this repository contains an automation test suite built with Playwright, Pyth
   - [Performing Tests](#performing-tests)
   - [Report Generation](#report-generation)
 - [Tests](#tests)
-  - [WooCommerce](#part-b-woocommerce)
-  - [Bonus](#bonus)
 - [Additional Topics](#additional-topics)
   - [Playwright Javascript WordPress Plugin Test](#playwright-javascript-wordpress-plugin-test)
   - [Similar Topics & Articles](#similar-topics--articles)
@@ -77,6 +75,13 @@ allure serve reports/allure-results
 |----------|-------------|--------|
 | 01       | End-to-End Checkout Flow | ✔️ |
 | 02       | User Account Order History | ✔️ |
+
+### Part C: Ninja Tables – Easy Data Table Builder
+
+| Task | Description              | Status |
+|------|--------------------------|--------|
+| 01   | Plugin Installation Test | ✔️ |
+| 02   | Plugin Activation Test   | ✔️ |
 
 ### Bonus 
 
