@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
 import re
-from conftest import base_url
+from utils.environment import base_url
 
 class OrderHistoryPage:
 
