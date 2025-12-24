@@ -1,6 +1,8 @@
 # WordPress Ecommerce Website Automation Test
 In this repository contains an automation test suite built with Playwright, Python & Pytest. I implement the Page Object Model (POM) design pattern. The test suite covers various plugin test in a WordPress ecommerce (WooCommerce) environment.
 
+Project Document Pdf: <a href="https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/documents/Playwright_WP_Ecommerce_Website_Automation_Test.pdf" target="_blank">Playwright_WordPress_Plugin_Automation_Test.pdf</a>
+
 ## Table Of Content
 - [View Live Report](#-view-live-report)
 - [Project Setup](#-project-setup)
@@ -17,7 +19,7 @@ In this repository contains an automation test suite built with Playwright, Pyth
 ## 🔎 View Live Report
 Check the test report live:
 - Allure Report: [View Allure Report]()
-- HTML Report: [View HTML Self Contained Report]()
+- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/index.html)
 
 
 ### Setting Up Environment
