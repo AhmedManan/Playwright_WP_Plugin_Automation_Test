@@ -1,48 +1,45 @@
 from playwright.sync_api import Page, expect
-import re
 from utils.environment import base_url
 
-class OrderHistoryPage:
 
+class OrderHistoryPage:
     def __init__(self, page: Page):
         self.page = page
         self.page_url = '/my-account/orders'
 
-        # Locators
-        self.view_order_details_button = page.get_by_role("cell", name="View order").first
-        self.product_name_locator = page.locator('.product-name')
+        # Improved Locators
+        self.view_order_details_button = page.get_by_role("link", name="View").first
+        # Target the specific cell to avoid header text or hidden elements
+        self.product_cells = page.locator("td.woocommerce-table__product-name")
         self.order_details_title = page.locator('.woocommerce-order-details__title')
-        # self.product_name_locator = page.locator('xpath=table/tbody/tr/td/a')
-
 
     def goto(self):
-        self.page.goto(base_url+self.page_url)
+        self.page.goto(base_url + self.page_url)
 
     def view_order_details(self):
         self.view_order_details_button.click()
-        self.order_details_title.is_visible()
+        # ASSERTION: Ensure we are actually on the details page before proceeding
+        expect(self.order_details_title).to_be_visible(timeout=10000)
 
     def get_all_products_in_order(self):
+        # 1. CRITICAL: Wait for at least one product cell to be visible
+        # This prevents all_text_contents() from returning [] too early.
+        self.product_cells.first.wait_for(state="visible")
 
-        all_names_with_whitespace = self.product_name_locator.all_text_contents()
+        # 2. Get all contents
+        raw_names = self.product_cells.all_text_contents()
 
         product_names_list = []
+        for name in raw_names:
+            # Cleaning logic
+            # WooCommerce often adds '× 1' or quantity strings inside the text content
+            cleaned_name = name.split('×')[0].strip()  # Splits at the '×' and takes the first part
 
-        for name in all_names_with_whitespace:
-
-            # Cleaning the name, replacing the unwanted value with ''
-            cleaned_name = name.replace('×\xa01', '').strip()
-
-            # Converting the webpage's curly apostrophe (’) to the CSV's straight apostrophe (') to prevent data mismatch
+            # Convert curly apostrophe to straight
             cleaned_name = cleaned_name.replace('’', "'")
 
-            # Filter out unwanted strings, 'Product'
             if cleaned_name and cleaned_name != 'Product':
                 product_names_list.append(cleaned_name)
 
-        print("\nFound Product Names: ")
-        print(product_names_list)
-
+        print(f"\nFound Product Names: {product_names_list}")
         return product_names_list
-
-

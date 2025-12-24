@@ -1,10 +1,11 @@
-import re
+import re, pytest
 from pages.wordpress.admin_dashboard import AdminDashboard
 from pages.wordpress.login_page import LoginPage
 from pages.woocommerce.orders_page import OrdersPage
 from pages.woocommerce.product_page import ProductPage
 from pages.woocommerce.checkout_page import CheckoutPage
 from pages.woocommerce.cart_page import CartPage
+from tests.WordPress import test_login
 from utils.product_data_utils import get_csv_data
 from playwright.sync_api import Page
 
@@ -13,6 +14,7 @@ class TestCheckoutFlow:
 
     expected_total_sum = 3041.85
 
+    @pytest.mark.dependency([test_login])
     def test_check_out_flow(self, page: Page):
         # ------------------------------------
         """End-to-End Checkout Flow"""
