@@ -3,6 +3,11 @@ In this repository contains an automation test suite built with Playwright, Pyth
 
 Project Document Pdf: <a href="https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/documents/Playwright_WP_Ecommerce_Website_Automation_Test.pdf" target="_blank">Playwright_WordPress_Plugin_Automation_Test.pdf</a>
 
+## 🔎 View Live Report
+Check the test report live:
+- Allure Report: [View Allure Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/allure_report/index.html)
+- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/index.html)
+
 ## Table Of Content
 - [View Live Report](#-view-live-report)
 - [Project Setup](#-project-setup)
@@ -15,12 +20,6 @@ Project Document Pdf: <a href="https://ahmedmanan.github.io/WP_Ecommerce_Automat
 - [Additional Topics](#additional-topics)
   - [Playwright Javascript WordPress Plugin Test](#playwright-javascript-wordpress-plugin-test)
   - [Similar Topics & Articles](#similar-topics--articles)
-
-## 🔎 View Live Report
-Check the test report live:
-- Allure Report: [View Allure Report]()
-- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/index.html)
-
 
 ### Setting Up Environment
 A .env file is a plain text file used to store environment variables for an application,
@@ -54,11 +53,11 @@ First, install it from terminal:
 ```
 Use the allure generate command to process the raw results into an HTML report structure.
  ```bash
- pytest--alluredir=reports/allure-results
+ pytest --alluredir=reports/allure-results
 ```
 Use the allure generate command to process the raw results into an HTML report structure.
  ```bash
- allure generate reports/allure-results-o reports/allure-report
+ allure generate reports/allure-results -o reports/allure-report
 ```
 The easiest way to view the report locally is to use the allure serve command, which starts a local web server and opens the report in your default browser.
  ```bash

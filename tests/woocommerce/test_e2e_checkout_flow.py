@@ -59,4 +59,4 @@ class TestCheckoutFlow:
         orders_page = OrdersPage(page)
         orders_page.goto()
         orders_page.view_order()
-        page.wait_for_timeout(5000)
+        # page.wait_for_timeout(5000)
