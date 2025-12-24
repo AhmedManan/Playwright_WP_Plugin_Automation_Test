@@ -3,13 +3,14 @@ In this repository contains an automation test suite built with Playwright, Pyth
 
 Project Document Pdf: <a href="https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/documents/Playwright_WP_Ecommerce_Website_Automation_Test.pdf" target="_blank">Playwright_WordPress_Plugin_Automation_Test.pdf</a>
 
-## 🔎 View Live Report
+## View Live Report
 Check the test report live:
-- Allure Report: [View Allure Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/allure_report/index.html)
+- Allure Report: [View Allure Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/allure-report/index.html)
 - HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/reports/index.html)
 
 ## Table Of Content
-- [View Live Report](#-view-live-report)
+- [View Live Report](#View-Live-Report)
+- [Project Structure](#Project-Structure)
 - [Project Setup](#-project-setup)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -20,6 +21,29 @@ Check the test report live:
 - [Additional Topics](#additional-topics)
   - [Playwright Javascript WordPress Plugin Test](#playwright-javascript-wordpress-plugin-test)
   - [Similar Topics & Articles](#similar-topics--articles)
+
+## Project Structure
+```bash
+WP_Ecommerce_Automation_Test
+├─ .env                     ← .env Variables
+├─ playwright.config.js     ← Config
+├─ pages                    ← Page Objects Directory
+│  └─ # All pages (example: wordpress/login_page.py)      
+├─ test_data                ← Test Data Directory (yml, csv, txt etc)
+│  └─ # All data files (example: product_data.csv) 
+├─ tests                    ← actual tests Directory
+│  └─ # All tests (example: wordpress/login_test.py)   
+├─ documents
+│  └─ # All document files (example: WP_Ecommerce_Automation_Test.pdf)  
+├─ Screenshots
+├─ Utils                    ← Test Utils Directory
+│  └─ # All utils files (example: environment.py) 
+├─ reports                    ← Test Reports Directory
+│  └─ # All test reports (example: html reports, allure reports) 
+└─ Logs
+``` 
+
+## Project Setup
 
 ### Setting Up Environment
 A .env file is a plain text file used to store environment variables for an application,
